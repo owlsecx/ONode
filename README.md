@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-DNS · Local/Public IP · Port Scan · Whois · ║
+ONode is a network diagnostic suite (ORecon) for DNS resolution, TCP port scanning, SSL/TLS certificate info, ping, reverse DNS, local network/route/ARP views, CIDR calculation, IP classification, and TCP latency probes. Results can be written as JSON; colour output is optional.
 
 ---
 
 ## ✨ Features
 
-- DNS, port scan, SSL, GeoIP, Whois, CIDR, routes & TCP latency toolkit
+- DNS resolution (A/AAAA plus dig-style records) and reverse DNS / PTR lookup
+- TCP port scan with configurable port list; SSL/TLS certificate inspection
+- ICMP ping and TCP connect latency probe with configurable port
+- Local network info, routes, and ARP/neighbour tables
+- Offline CIDR/subnet calculator and IP classification
+- Optional JSON result file via `--json-out`; `--no-color` for plain output
 
 ---
 
@@ -38,7 +43,10 @@ DNS · Local/Public IP · Port Scan · Whois · ║
 ## 🚀 Usage
 
 ```bash
-./ONode
+./ONode --dns example.com
+./ONode --scan 192.168.1.10 --ports 22,80,443
+./ONode --ssl example.com --json-out result.json
+./ONode --help
 ```
 
 ---
